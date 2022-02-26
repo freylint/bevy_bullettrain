@@ -37,5 +37,9 @@ Rel(shotcomponent, cnshot, "References")
 
 Rel(btsys, cnapp, "Updates")
 Rel_D(cnapp, btres, "Uses")
+@enduml
+
+@startuml LowLevel
+!include HighLevel!bevy
 
 @enduml
