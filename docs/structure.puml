@@ -1,0 +1,41 @@
+@startuml HighLevel
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define MATERIAL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
+
+!include MATERIAL/autorenew.puml
+!include MATERIAL/archive.puml
+
+AddRelTag("optional", $lineColor="grey", $lineStyle = DashedLine())
+
+Container(bevy, "Bevy")
+
+Boundary(btres, "BulletTrain Resources", "bevy_bullettrain::res") {
+    Container(collider, ShotCollider, "BulletTrain", $sprite="archive")
+    Container(pattern, ShotPattern, "BulletTrain", $sprite="archive")
+    Container(path, ShotPath, "BulletTrain", $sprite="archive")
+    Container(renderer, ShotRenderer, "BulletTrain", $sprite="archive")
+}
+
+Boundary(btsys, "BulletTrain Systems", "bevy_bullettrain::ecs") {
+    System(patternsys, "PatternSys", "Spawns shot entities using `ShotPattern` resources", $sprite="autorenew")
+    System(shotsys, "ShotSys", "Updates the components of a shot entity", $sprite="autorenew")
+}
+
+Boundary(cnapp, "Consumer") {
+    Container(shotcomponent, ShotComponent, "Consumer")
+    Container(cnshot, My Shot Entity, "Consumer")
+}
+
+
+Rel(btres, bevy, "Registers", $tags="optional")
+Rel_U(bevy, btsys, "Executes")
+
+Rel(cnapp, bevy, "Registers", $tags="optional")
+Rel(shotcomponent, cnshot, "References")
+
+Rel(btsys, cnapp, "Updates")
+Rel_D(cnapp, btres, "Uses")
+
+@enduml
