@@ -3,5 +3,10 @@ name = "bevy_bullettrain"
 version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
+keywords = ["bevy"]
+readme = "README.md"
+repository = "https://github.com/freylint/bevy_bullettrain"
+exclude = ["./docs"]
 
 [dependencies]
+bevy = { version = "0.6", default-features = false}
