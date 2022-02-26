@@ -1,5 +1,4 @@
 @startuml HighLevel
-
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 !define MATERIAL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
@@ -37,9 +36,4 @@ Rel(shotcomponent, cnshot, "References")
 
 Rel(btsys, cnapp, "Updates")
 Rel_D(cnapp, btres, "Uses")
-@enduml
-
-@startuml LowLevel
-!include HighLevel!bevy
-
 @enduml

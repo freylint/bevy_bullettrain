@@ -1,0 +1,13 @@
+@startuml LowLevel
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define MATERIAL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/material
+
+!include MATERIAL/autorenew.puml
+!include MATERIAL/archive.puml
+
+AddRelTag("optional", $lineColor="grey", $lineStyle = DashedLine())
+
+Container(bevy, "Bevy")
+
+@enduml
