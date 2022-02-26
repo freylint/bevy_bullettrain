@@ -10,3 +10,6 @@ opt-uml: build-uml
 
 dev-uml:
 	watch -n 0.5 make opt-uml
+
+clean:
+	rm -rf docs/cache/
