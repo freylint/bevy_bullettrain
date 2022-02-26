@@ -1,2 +1,2 @@
 # bevy_bullettrain
-Bevy Engine middleware for developing schmups
+Bevy Engine middleware for developing shmups
